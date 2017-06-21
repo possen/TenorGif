@@ -1,6 +1,5 @@
 //
-//  TubiCollectionViewController.swift
-//  Tubi
+//  CollectionViewController.swift
 //
 //  Created by Paul Ossenbruggen on 6/20/17.
 //  Copyright © 2017 Paul Ossenbruggen. All rights reserved.
@@ -8,7 +7,7 @@
 
 import UIKit
 
-class TubiCollectionViewController: UICollectionViewController {
+class CollectionViewController: UICollectionViewController {
     var cellCollectionViewAdaptor: CollectionViewAdaptor!
     var searchAdaptor : SearchAdaptor? = nil
     let query = Query()
@@ -37,7 +36,6 @@ class TubiCollectionViewController: UICollectionViewController {
         searchAdaptor = SearchAdaptor(searchView: searchBar, parentView: view) {
             self.performQuery(query: self.searchBar.text ?? "")
         }
-        
     }
         
     fileprivate func process(_ data: (Data)) {

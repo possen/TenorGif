@@ -1,6 +1,5 @@
 //
 //  RESTNetworkRequest.swift
-//  Tubi
 //
 //  Created by Paul Ossenbruggen on 6/20/17.
 //  Copyright © 2017 Paul Ossenbruggen. All rights reserved.
@@ -16,7 +15,7 @@ enum CompletionData<DataType> {
 class RESTNetworkRequest {
     fileprivate let baseUrl = URL(string: "https://api.tenor.com/")
     fileprivate let command : String
-    fileprivate var parameters : [String : String] = [:]
+    fileprivate var parameters : [String: String] = [:]
     
     init(command : String, parameters : [String : String]) {
         self.command = command

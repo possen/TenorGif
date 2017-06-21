@@ -1,6 +1,5 @@
 //
 //  UIImageView+Extensions.swift
-//  Carousel
 //
 //  Created by Paul Ossenbruggen on 6/19/17.
 //

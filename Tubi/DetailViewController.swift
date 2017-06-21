@@ -1,6 +1,5 @@
 //
 //  DetailViewController.swift
-//  Tubi
 //
 //  Created by Paul Ossenbruggen on 6/20/17.
 //  Copyright © 2017 Paul Ossenbruggen. All rights reserved.
@@ -11,7 +10,7 @@ import AVKit
 
 class DetailViewController: AVPlayerViewController {
     var model: AssetModel.Result!
-    var del = TubiPlayerDelegate()
+    var del = PlayerDelegate()
     
     override func viewDidLoad() {
         self.delegate = del
