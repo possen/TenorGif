@@ -17,7 +17,7 @@ class CollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         cellAdaptorSection = CollectionViewAdaptorSection<CollectionCell, AssetModel.Result> (
-            cellReuseIdentifier: "Cell",
+            cellReuseIdentifier: "CollectionCell",
             title: "",
             height: 200,
             items: [])

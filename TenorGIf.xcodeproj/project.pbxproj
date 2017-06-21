@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D50AB2DB1EFA36EF00106764 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C35A5C1EFA2EEE00B73A68 /* CollectionViewController.swift */; };
 		D5B34F621EF9BBCA0059667F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B34F611EF9BBCA0059667F /* AppDelegate.swift */; };
 		D5B34F671EF9BBCA0059667F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B34F651EF9BBCA0059667F /* Main.storyboard */; };
 		D5B34F691EF9BBCA0059667F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5B34F681EF9BBCA0059667F /* Assets.xcassets */; };
@@ -156,6 +157,11 @@
 				TargetAttributes = {
 					D5B34F5D1EF9BBCA0059667F = {
 						CreatedOnToolsVersion = 9.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -205,6 +211,7 @@
 				D5C35A591EFA0E4200B73A68 /* DetailViewController.swift in Sources */,
 				D5B34F7A1EF9BEEA0059667F /* AssetModel.swift in Sources */,
 				D5B34F781EF9BDD00059667F /* CollectionCell.swift in Sources */,
+				D50AB2DB1EFA36EF00106764 /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

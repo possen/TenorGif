@@ -27,7 +27,7 @@
         <!--Title-->
         <scene sceneID="FXx-eE-EIW">
             <objects>
-                <collectionViewController id="ME4-l4-9tc" customClass="CollectionViewController" sceneMemberID="viewController">
+                <collectionViewController id="ME4-l4-9tc" customClass="CollectionViewController" customModule="TenorGif" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="9P7-ko-0en">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,14 +39,14 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="UdX-K9-LBH" customClass="CollectionCell" customModule="TenorGif" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="UdX-K9-LBH" customClass="CollectionCell" customModule="TenorGif" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="132" height="142"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="132" height="142"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ki-MJ-eDg" customClass="Cell">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ki-MJ-eDg">
                                             <rect key="frame" x="0.0" y="0.0" width="120" height="129"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -77,7 +77,7 @@
                         </connections>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchBar" destination="Ve9-me-8Fg" id="tcz-EC-DQU"/>
+                        <outlet property="searchBar" destination="Ve9-me-8Fg" id="4Mn-Wj-dJn"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipW-lf-ViF" userLabel="First Responder" sceneMemberID="firstResponder"/>

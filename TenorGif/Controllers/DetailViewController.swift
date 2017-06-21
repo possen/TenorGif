@@ -5,8 +5,8 @@
 //  Copyright © 2017 Paul Ossenbruggen. All rights reserved.
 //
 
-import UIKit
 import AVKit
+import AVFoundation
 
 class DetailViewController: AVPlayerViewController {
     var model: AssetModel.Result!
@@ -15,7 +15,10 @@ class DetailViewController: AVPlayerViewController {
     override func viewDidLoad() {
         self.delegate = del
         exitsFullScreenWhenPlaybackEnds = true
-        if let url = URL(string: model.media[0].loopedmp4.url) {
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let url = URL(string: "http://devstreaming.apple.com/videos/wwdc/2016/102w0bsn0ge83qfv7za/102/hls_vod_mvp.m3u8") {
             let pl = AVPlayer(url: url)
             self.player = pl
             pl.play()
