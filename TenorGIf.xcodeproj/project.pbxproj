@@ -23,7 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D5B34F5E1EF9BBCA0059667F /* Tubi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tubi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D517614D1EFA32D2005D66D9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D5B34F5E1EF9BBCA0059667F /* TenorGif.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenorGif.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5B34F611EF9BBCA0059667F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5B34F661EF9BBCA0059667F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D5B34F681EF9BBCA0059667F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,10 +53,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D51761491EFA3172005D66D9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5B34F7D1EF9C0830059667F /* Query.swift */,
+				D5B34F7B1EF9C0440059667F /* RESTNetworkRequest.swift */,
+				D5B34F791EF9BEEA0059667F /* AssetModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D517614A1EFA3194005D66D9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D5C35A5A1EFA114300B73A68 /* PlayerDelegate.swift */,
+				D5B3BEB11EF9CE0300019DAB /* SearchAdaptor.swift */,
+				D5C35A5C1EFA2EEE00B73A68 /* CollectionViewController.swift */,
+				D5C35A581EFA0E4200B73A68 /* DetailViewController.swift */,
+				D5B34F751EF9BD030059667F /* CollectionAdaptor.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D517614B1EFA31B0005D66D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D5B34F771EF9BDD00059667F /* CollectionCell.swift */,
+				D5B34F7F1EF9C8270059667F /* ImageView+Extension.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D517614C1EFA31F2005D66D9 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D5B34F651EF9BBCA0059667F /* Main.storyboard */,
+				D5B34F681EF9BBCA0059667F /* Assets.xcassets */,
+				D5B34F6A1EF9BBCA0059667F /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		D5B34F551EF9BBCA0059667F = {
 			isa = PBXGroup;
 			children = (
-				D5B34F601EF9BBCA0059667F /* Tubi */,
+				D517614D1EFA32D2005D66D9 /* Default-568h@2x.png */,
+				D5B34F601EF9BBCA0059667F /* TenorGif */,
 				D5B34F5F1EF9BBCA0059667F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,39 +106,30 @@
 		D5B34F5F1EF9BBCA0059667F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D5B34F5E1EF9BBCA0059667F /* Tubi.app */,
+				D5B34F5E1EF9BBCA0059667F /* TenorGif.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D5B34F601EF9BBCA0059667F /* Tubi */ = {
+		D5B34F601EF9BBCA0059667F /* TenorGif */ = {
 			isa = PBXGroup;
 			children = (
-				D5C35A5C1EFA2EEE00B73A68 /* CollectionViewController.swift */,
 				D5B34F611EF9BBCA0059667F /* AppDelegate.swift */,
-				D5B34F651EF9BBCA0059667F /* Main.storyboard */,
-				D5B34F681EF9BBCA0059667F /* Assets.xcassets */,
-				D5B34F6A1EF9BBCA0059667F /* LaunchScreen.storyboard */,
+				D517614C1EFA31F2005D66D9 /* Assets */,
 				D5B34F6D1EF9BBCA0059667F /* Info.plist */,
-				D5C35A581EFA0E4200B73A68 /* DetailViewController.swift */,
-				D5C35A5A1EFA114300B73A68 /* PlayerDelegate.swift */,
-				D5B34F751EF9BD030059667F /* CollectionAdaptor.swift */,
-				D5B34F771EF9BDD00059667F /* CollectionCell.swift */,
-				D5B34F7F1EF9C8270059667F /* ImageView+Extension.swift */,
-				D5B34F791EF9BEEA0059667F /* AssetModel.swift */,
-				D5B3BEB11EF9CE0300019DAB /* SearchAdaptor.swift */,
-				D5B34F7B1EF9C0440059667F /* RESTNetworkRequest.swift */,
-				D5B34F7D1EF9C0830059667F /* Query.swift */,
+				D517614B1EFA31B0005D66D9 /* Views */,
+				D517614A1EFA3194005D66D9 /* Controllers */,
+				D51761491EFA3172005D66D9 /* Model */,
 			);
-			path = Tubi;
+			path = TenorGif;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D5B34F5D1EF9BBCA0059667F /* Tubi */ = {
+		D5B34F5D1EF9BBCA0059667F /* TenorGif */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D5B34F701EF9BBCA0059667F /* Build configuration list for PBXNativeTarget "Tubi" */;
+			buildConfigurationList = D5B34F701EF9BBCA0059667F /* Build configuration list for PBXNativeTarget "TenorGif" */;
 			buildPhases = (
 				D5B34F5A1EF9BBCA0059667F /* Sources */,
 				D5B34F5B1EF9BBCA0059667F /* Frameworks */,
@@ -105,9 +139,9 @@
 			);
 			dependencies = (
 			);
-			name = Tubi;
+			name = TenorGif;
 			productName = Tubi;
-			productReference = D5B34F5E1EF9BBCA0059667F /* Tubi.app */;
+			productReference = D5B34F5E1EF9BBCA0059667F /* TenorGif.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -125,7 +159,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D5B34F591EF9BBCA0059667F /* Build configuration list for PBXProject "Tubi" */;
+			buildConfigurationList = D5B34F591EF9BBCA0059667F /* Build configuration list for PBXProject "TenorGIf" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -138,7 +172,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D5B34F5D1EF9BBCA0059667F /* Tubi */,
+				D5B34F5D1EF9BBCA0059667F /* TenorGif */,
 			);
 		};
 /* End PBXProject section */
@@ -183,6 +217,7 @@
 				D5B34F661EF9BBCA0059667F /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D5B34F6A1EF9BBCA0059667F /* LaunchScreen.storyboard */ = {
@@ -191,6 +226,7 @@
 				D5B34F6B1EF9BBCA0059667F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -304,7 +340,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UVHFXZWG47;
-				INFOPLIST_FILE = Tubi/Info.plist;
+				INFOPLIST_FILE = TenorGIf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.synthus.Tubi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -318,7 +354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UVHFXZWG47;
-				INFOPLIST_FILE = Tubi/Info.plist;
+				INFOPLIST_FILE = TenorGIf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.synthus.Tubi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -330,7 +366,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D5B34F591EF9BBCA0059667F /* Build configuration list for PBXProject "Tubi" */ = {
+		D5B34F591EF9BBCA0059667F /* Build configuration list for PBXProject "TenorGIf" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D5B34F6E1EF9BBCA0059667F /* Debug */,
@@ -339,7 +375,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D5B34F701EF9BBCA0059667F /* Build configuration list for PBXNativeTarget "Tubi" */ = {
+		D5B34F701EF9BBCA0059667F /* Build configuration list for PBXNativeTarget "TenorGif" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D5B34F711EF9BBCA0059667F /* Debug */,

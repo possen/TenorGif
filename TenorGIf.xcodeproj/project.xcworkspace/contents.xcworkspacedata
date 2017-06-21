@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Tubi.xcodeproj">
+      location = "self:/Users/possen/Projects/Tubi/TenorGIf.xcodeproj">
    </FileRef>
 </Workspace>
