@@ -19,7 +19,7 @@ class CollectionCell: UICollectionViewCell {
     var viewData: ViewData? {
         didSet {
             if let viewData = viewData {
-                let thumbnailURL = URL(string: viewData.result.media[0].loopedmp4.preview)!
+                let thumbnailURL = viewData.result.media[0].loopedmp4.preview
                 image.loadImageAtURL(thumbnailURL, index: viewData.index)
             } else {
                 image.image = UIImage(named: "Placeholder")

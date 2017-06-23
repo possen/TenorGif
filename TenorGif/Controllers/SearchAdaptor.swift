@@ -17,7 +17,6 @@ class SearchAdaptor : NSObject {
         self.init()
         
         self.completion = completion
-        
         searchView.delegate = self
     }
     
@@ -25,7 +24,7 @@ class SearchAdaptor : NSObject {
         DispatchQueue.main.async {
             searchBar.text = searchText
             print("query", searchText)
-            DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: DispatchTime.now() + .milliseconds(100)) {
+            DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: DispatchTime.now() + .milliseconds(500)) {
                 DispatchQueue.main.async {
                     self.completion?()
                 }

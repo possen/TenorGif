@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol UpdateDelegate {
+    func update()
+}
+
 // Swift 4 decodable is quite nice.
 enum AssetModelError: Error {
     case jsonDecodeError
@@ -15,8 +19,8 @@ enum AssetModelError: Error {
 struct AssetModel: Decodable {
     
     struct LoopedMP4: Decodable {
-        let url: String
-        let preview: String
+        let url: URL
+        let preview: URL
     }
     
     struct Media: Decodable {
@@ -29,14 +33,4 @@ struct AssetModel: Decodable {
     }
     
     let results: [Result]
-    
-    static func process(_ data: (Data)) -> CompletionData<AssetModel> {
-        let decoder = JSONDecoder()
-        do {
-            let result = try decoder.decode(AssetModel.self, from: data)
-            return CompletionData.success(result)
-        } catch let error {
-            return CompletionData.error(error)
-        }
-    }
 }

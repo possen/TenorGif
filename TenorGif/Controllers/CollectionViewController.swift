@@ -9,17 +9,24 @@ import UIKit
 
 class CollectionViewController: UICollectionViewController {
     var cellCollectionViewAdaptor: CollectionViewAdaptor!
-    var searchAdaptor : SearchAdaptor? = nil
-    let query = Query()
     var cellAdaptorSection: CollectionViewAdaptorSection<CollectionCell, AssetModel.Result>!
-    
-    @IBOutlet weak var searchBar: UISearchBar!
+    var dataChangedObserverToken: NSKeyValueObservation!
+    var modelStore: ModelStore!
+    var searchController: UISearchController!
     
     override func viewDidLoad() {
+        let navigationItem = navigationController?.navigationItem
+        navigationItem?.searchController = searchController
+        
+        let headerAdaptorSection = CollectionViewAdaptorSection<SearchCell, Void> (
+            cellReuseIdentifier: "SearchCell",
+            items: [()])
+        { cell, model, index in
+            cell.subviews[0].addSubview(self.searchController.searchBar)
+        }
+        
         cellAdaptorSection = CollectionViewAdaptorSection<CollectionCell, AssetModel.Result> (
             cellReuseIdentifier: "CollectionCell",
-            title: "",
-            height: 200,
             items: [])
         { cell, model, index in
             cell.viewData = CollectionCell.ViewData(model: model, index: index)
@@ -27,66 +34,21 @@ class CollectionViewController: UICollectionViewController {
         
         cellCollectionViewAdaptor = CollectionViewAdaptor (
             collectionView: collectionView!,
-            sections: [cellAdaptorSection],
-            didChangeHandler: { [unowned self] in
+            sections: [headerAdaptorSection, cellAdaptorSection]) { [unowned self] in
                 self.collectionView?.reloadData()
             }
-        )
         
-        searchAdaptor = SearchAdaptor(searchView: searchBar, parentView: view) {
-            self.performQuery(query: self.searchBar.text ?? "")
-        }
-    }
-        
-    fileprivate func process(_ data: (Data)) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.processInBackground(data)
-        }
-    }
-        
-    func performQuery(query: String) {
-        return self.query.query(query: query, limit:50).send { (result) in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let data):
-                    self.process(data)
-                case .error(let error):
-                    self.displayError(error)
-                }
+        dataChangedObserverToken = modelStore.observe(\ModelStore.updated) { (object, change) in
+            if let results = object.results {
+                self.cellAdaptorSection?.items = results.results
             }
+            self.cellCollectionViewAdaptor?.update()
         }
     }
-    
-    fileprivate func processInBackground(_ data: (Data)) {
-        let result = AssetModel.process(data)
-        DispatchQueue.main.async {
-            switch result {
-            case .success(let data):
-                guard data.results.count >= 1 else {
-                    return
-                }
-                self.cellAdaptorSection?.items = data.results
-                self.cellCollectionViewAdaptor?.update()
-            case .error(let error):
-                self.displayError(error)
-            }
-        }
-    }
-    
-    fileprivate func displayError(_ error: (Error)) {
-        print(error)
-        let alert = UIAlertController(title: "NetworkError", message: "error \(error)", preferredStyle: .actionSheet)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
-            alert.dismiss(animated: true, completion: {})
-        })
-        alert.addAction(okAction)
-        alert.popoverPresentationController?.sourceView = searchBar
-        self.present(alert, animated: true, completion: {})
-    }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "detail" {
-            let destination = segue.destination as! DetailViewController
+            let destination = segue.destination as! VideoViewController
             let send = sender as! CollectionCell
             if let indexPath = collectionView?.indexPath(for: send) {
                 destination.model = cellAdaptorSection.items[indexPath.row]

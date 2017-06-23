@@ -13,27 +13,19 @@ protocol CollectionViewDataManagerDelegate : class {
 
 protocol CollectionSectionAdaptor {
     var cellReuseIdentifier: String { get }
-    var title: String { get }
-    var height : CGFloat { get }
     var itemCount : Int { get }
     func configure(cell: UICollectionViewCell, index: Int)
 }
 
 class CollectionViewAdaptorSection<Cell, Model>: CollectionSectionAdaptor {
     internal let cellReuseIdentifier: String
-    internal let title: String
-    internal let height: CGFloat
     internal var items: [Model]
     
     init(cellReuseIdentifier: String,
-         title: String,
-         height: CGFloat,
          items: [Model],
          configure: @escaping ( Cell, Model, Int ) -> Void)
     {
         self.cellReuseIdentifier = cellReuseIdentifier
-        self.title = title
-        self.height = height
         self.items = items
         self.configure = configure
     }
@@ -51,12 +43,7 @@ class CollectionViewAdaptorSection<Cell, Model>: CollectionSectionAdaptor {
 
 
 class CollectionViewAdaptor: NSObject,
-    UICollectionViewDataSource,
-    UICollectionViewDelegate,
     CollectionViewDataManagerDelegate {
-    
-    public var headerHeight : CGFloat = 20.0
-    public var footerHeight : CGFloat = 20.0
     private let collectionView: UICollectionView
     private let didChangeHandler: () -> Void
     public var sections : [CollectionSectionAdaptor]
@@ -73,14 +60,19 @@ class CollectionViewAdaptor: NSObject,
         self.collectionView.dataSource = self
     }
     
+    public func update() {
+        DispatchQueue.main.async {
+            self.didChangeHandler()
+        }
+    }
+}
+
+extension CollectionViewAdaptor: UICollectionViewDataSource {
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sections.count
     }
-    
-    func collectionView(_ collectionView: UICollectionView, titleForHeaderInSection section: Int) -> String? {
-        return sections[section].title
-    }
-    
+        
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let section = sections[section]
         return section.itemCount
@@ -93,21 +85,13 @@ class CollectionViewAdaptor: NSObject,
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, heightForHeaderInSection section: Int) -> CGFloat {
-        return sections[section].itemCount != 0 ? headerHeight : 0.01
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, heightForFooterInSection section: Int) -> CGFloat {
-        return sections[section].itemCount != 0 ? footerHeight : 0.01
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return sections[indexPath.section].height
-    }
-    
-    public func update() {
-        DispatchQueue.main.async {
-            self.didChangeHandler()
-        }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "searchHeader", for: indexPath)
     }
 }
+
+
+extension CollectionViewAdaptor: UICollectionViewDelegate {
+}
+

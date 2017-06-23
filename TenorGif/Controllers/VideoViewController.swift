@@ -8,8 +8,8 @@
 import AVKit
 import AVFoundation
 
-class DetailViewController: AVPlayerViewController {
-    var model: AssetModel.Result!
+class VideoViewController: AVPlayerViewController {
+    var model: AssetModel.Result?
     var del = PlayerDelegate()
     
     override func viewDidLoad() {
@@ -18,10 +18,11 @@ class DetailViewController: AVPlayerViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let url = URL(string: "http://devstreaming.apple.com/videos/wwdc/2016/102w0bsn0ge83qfv7za/102/hls_vod_mvp.m3u8") {
-            let pl = AVPlayer(url: url)
-            self.player = pl
-            pl.play()
+        guard let model = model else {
+            return
         }
+        let url = model.media[0].loopedmp4.url
+        player = AVPlayer(url: url)
+        player?.play()
     }
 }
