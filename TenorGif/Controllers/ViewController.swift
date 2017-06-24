@@ -20,9 +20,13 @@ class ViewController: UIViewController {
         super.init(coder: aDecoder)
         searchController = UISearchController(searchResultsController: nil)
     }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.largeTitleDisplayMode = .never
         
         searchAdaptor = SearchAdaptor(searchView: searchController.searchBar, parentView: view) {
             self.performQuery(query: self.searchController.searchBar.text ?? "")
@@ -80,7 +84,6 @@ class ViewController: UIViewController {
         if segue.identifier == "collection" {
             collectionController = segue.destination as! CollectionViewController
             collectionController.modelStore = modelStore
-            collectionController.searchController = searchController
         } else if segue.identifier == "video" {
             videoController = segue.destination as! VideoViewController
             if let results = modelStore.results?.results, results.count > 0 {

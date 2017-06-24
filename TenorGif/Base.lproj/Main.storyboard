@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kbx-DQ-YqJ">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -30,12 +30,12 @@
         <!--Gifs-->
         <scene sceneID="FXx-eE-EIW">
             <objects>
-                <collectionViewController id="ME4-l4-9tc" customClass="CollectionViewController" customModule="TenorGif" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController automaticallyAdjustsScrollViewInsets="NO" id="ME4-l4-9tc" customClass="CollectionViewController" customModule="TenorGif" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="9P7-ko-0en">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="569"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1058"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hxa-9d-fWa">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Hxa-9d-fWa">
                             <size key="itemSize" width="120" height="129"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -43,7 +43,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchCell" id="Mwb-4b-CQS" customClass="SearchCell" customModule="TenorGif" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                <rect key="frame" x="0.0" y="40" width="375" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -59,7 +59,7 @@
                                 <size key="customSize" width="375" height="49"/>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="UdX-K9-LBH" customClass="CollectionCell" customModule="TenorGif" customModuleProvider="target">
-                                <rect key="frame" x="127.5" y="59" width="120" height="129"/>
+                                <rect key="frame" x="375" y="0.0" width="120" height="129"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="129"/>
@@ -81,7 +81,7 @@
                                     <constraint firstItem="6ki-MJ-eDg" firstAttribute="leading" secondItem="UdX-K9-LBH" secondAttribute="leading" id="B1h-rt-5YB"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="6ki-MJ-eDg" secondAttribute="trailing" constant="-8" id="FIh-Qa-KW2"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="6ki-MJ-eDg" secondAttribute="bottom" constant="-8" id="JSn-4q-shy"/>
-                                    <constraint firstItem="8gI-RN-ALo" firstAttribute="top" secondItem="UdX-K9-LBH" secondAttribute="topMargin" constant="80" id="Q5d-oz-36p"/>
+                                    <constraint firstAttribute="bottom" secondItem="8gI-RN-ALo" secondAttribute="bottom" constant="20" id="Lg1-Hk-tCV"/>
                                     <constraint firstItem="6ki-MJ-eDg" firstAttribute="trailing" secondItem="8gI-RN-ALo" secondAttribute="trailing" constant="6" id="Vfo-fS-zVQ"/>
                                     <constraint firstItem="6ki-MJ-eDg" firstAttribute="leading" secondItem="8gI-RN-ALo" secondAttribute="leading" constant="-6" id="jC0-by-g7s"/>
                                 </constraints>
@@ -98,6 +98,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Gifs" id="wEc-cb-07I"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipW-lf-ViF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -109,25 +110,30 @@
                 <viewController id="zRm-fs-KEv" customClass="ViewController" customModule="TenorGif" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides/>
                     <view key="view" contentMode="scaleToFill" id="6Y8-wm-IDA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3t5-HT-4fg">
-                                <rect key="frame" x="0.0" y="98" width="375" height="569"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3t5-HT-4fg">
+                                <rect key="frame" x="0.0" y="-34" width="768" height="1058"/>
                                 <connections>
                                     <segue destination="ME4-l4-9tc" kind="embed" identifier="collection" id="PjZ-hp-vYj"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="96y-TP-C3g" firstAttribute="bottom" secondItem="3t5-HT-4fg" secondAttribute="bottom" id="13v-Wd-L6C"/>
+                            <constraint firstItem="3t5-HT-4fg" firstAttribute="leading" secondItem="96y-TP-C3g" secondAttribute="leading" id="SID-en-O01"/>
+                            <constraint firstItem="96y-TP-C3g" firstAttribute="trailing" secondItem="3t5-HT-4fg" secondAttribute="trailing" id="ZKW-di-oWg"/>
+                            <constraint firstItem="96y-TP-C3g" firstAttribute="top" secondItem="3t5-HT-4fg" secondAttribute="top" constant="98" id="veK-l8-6pB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="96y-TP-C3g"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Search Tenor" prompt="Prompt" id="dQG-1b-Hsc"/>
+                    <navigationItem key="navigationItem" title="Search Tenor" id="dQG-1b-Hsc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YEw-ln-txF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="376.80000000000001" y="127.28635682158921"/>
+            <point key="canvasLocation" x="376.5625" y="127.14843749999999"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="Ajv-bc-GGh">

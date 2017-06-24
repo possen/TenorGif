@@ -12,21 +12,13 @@ class CollectionViewController: UICollectionViewController {
     var cellAdaptorSection: CollectionViewAdaptorSection<CollectionCell, AssetModel.Result>!
     var dataChangedObserverToken: NSKeyValueObservation!
     var modelStore: ModelStore!
-    var searchController: UISearchController!
     
     override func viewDidLoad() {
-        let navigationItem = navigationController?.navigationItem
-        navigationItem?.searchController = searchController
-        
-        let headerAdaptorSection = CollectionViewAdaptorSection<SearchCell, Void> (
-            cellReuseIdentifier: "SearchCell",
-            items: [()])
-        { cell, model, index in
-            cell.subviews[0].addSubview(self.searchController.searchBar)
-        }
+        let frame = collectionView?.frame
         
         cellAdaptorSection = CollectionViewAdaptorSection<CollectionCell, AssetModel.Result> (
             cellReuseIdentifier: "CollectionCell",
+            cellSize: CGSize(width: frame!.width, height: frame!.width),
             items: [])
         { cell, model, index in
             cell.viewData = CollectionCell.ViewData(model: model, index: index)
@@ -34,7 +26,7 @@ class CollectionViewController: UICollectionViewController {
         
         cellCollectionViewAdaptor = CollectionViewAdaptor (
             collectionView: collectionView!,
-            sections: [headerAdaptorSection, cellAdaptorSection]) { [unowned self] in
+            sections: [cellAdaptorSection]) { [unowned self] in
                 self.collectionView?.reloadData()
             }
         

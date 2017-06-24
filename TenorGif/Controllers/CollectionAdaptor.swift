@@ -13,6 +13,7 @@ protocol CollectionViewDataManagerDelegate : class {
 
 protocol CollectionSectionAdaptor {
     var cellReuseIdentifier: String { get }
+    var cellSize: CGSize { get }
     var itemCount : Int { get }
     func configure(cell: UICollectionViewCell, index: Int)
 }
@@ -20,14 +21,17 @@ protocol CollectionSectionAdaptor {
 class CollectionViewAdaptorSection<Cell, Model>: CollectionSectionAdaptor {
     internal let cellReuseIdentifier: String
     internal var items: [Model]
+    internal var cellSize: CGSize
     
     init(cellReuseIdentifier: String,
+         cellSize: CGSize,
          items: [Model],
          configure: @escaping ( Cell, Model, Int ) -> Void)
     {
         self.cellReuseIdentifier = cellReuseIdentifier
         self.items = items
         self.configure = configure
+        self.cellSize = cellSize
     }
     
     internal var itemCount: Int {
@@ -91,7 +95,12 @@ extension CollectionViewAdaptor: UICollectionViewDataSource {
     }
 }
 
-
+extension CollectionViewAdaptor: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return sections[indexPath.section].cellSize
+    }
+}
 extension CollectionViewAdaptor: UICollectionViewDelegate {
+    
 }
 
