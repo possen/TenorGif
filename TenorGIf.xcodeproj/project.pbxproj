@@ -23,8 +23,19 @@
 		D5B3BEB21EF9CE0300019DAB /* SearchAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B3BEB11EF9CE0300019DAB /* SearchAdaptor.swift */; };
 		D5C35A591EFA0E4200B73A68 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C35A581EFA0E4200B73A68 /* VideoViewController.swift */; };
 		D5C35A5B1EFA114300B73A68 /* PlayerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C35A5A1EFA114300B73A68 /* PlayerDelegate.swift */; };
+		D5F091CF1F033C9F00233F74 /* TenorGifTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F091CE1F033C9F00233F74 /* TenorGifTests.swift */; };
 		D5F6580D1EFADAC800DDD01E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F6580C1EFADAC800DDD01E /* ViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D5F091D11F033C9F00233F74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5B34F561EF9BBCA0059667F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5B34F5D1EF9BBCA0059667F;
+			remoteInfo = TenorGif;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D517614D1EFA32D2005D66D9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -46,11 +57,21 @@
 		D5C35A581EFA0E4200B73A68 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		D5C35A5A1EFA114300B73A68 /* PlayerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDelegate.swift; sourceTree = "<group>"; };
 		D5C35A5C1EFA2EEE00B73A68 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		D5F091CC1F033C9F00233F74 /* TenorGifTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TenorGifTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5F091CE1F033C9F00233F74 /* TenorGifTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenorGifTests.swift; sourceTree = "<group>"; };
+		D5F091D01F033C9F00233F74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5F6580C1EFADAC800DDD01E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D5B34F5B1EF9BBCA0059667F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F091C91F033C9F00233F74 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -109,6 +130,7 @@
 			children = (
 				D517614D1EFA32D2005D66D9 /* Default-568h@2x.png */,
 				D5B34F601EF9BBCA0059667F /* TenorGif */,
+				D5F091CD1F033C9F00233F74 /* TenorGifTests */,
 				D5B34F5F1EF9BBCA0059667F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -117,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				D5B34F5E1EF9BBCA0059667F /* TenorGif.app */,
+				D5F091CC1F033C9F00233F74 /* TenorGifTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,6 +155,15 @@
 				D51761491EFA3172005D66D9 /* Model */,
 			);
 			path = TenorGif;
+			sourceTree = "<group>";
+		};
+		D5F091CD1F033C9F00233F74 /* TenorGifTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5F091CE1F033C9F00233F74 /* TenorGifTests.swift */,
+				D5F091D01F033C9F00233F74 /* Info.plist */,
+			);
+			path = TenorGifTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +186,24 @@
 			productReference = D5B34F5E1EF9BBCA0059667F /* TenorGif.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D5F091CB1F033C9F00233F74 /* TenorGifTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5F091D51F033CA000233F74 /* Build configuration list for PBXNativeTarget "TenorGifTests" */;
+			buildPhases = (
+				D5F091C81F033C9F00233F74 /* Sources */,
+				D5F091C91F033C9F00233F74 /* Frameworks */,
+				D5F091CA1F033C9F00233F74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5F091D21F033C9F00233F74 /* PBXTargetDependency */,
+			);
+			name = TenorGifTests;
+			productName = TenorGifTests;
+			productReference = D5F091CC1F033C9F00233F74 /* TenorGifTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -172,6 +222,10 @@
 							};
 						};
 					};
+					D5F091CB1F033C9F00233F74 = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = D5B34F5D1EF9BBCA0059667F;
+					};
 				};
 			};
 			buildConfigurationList = D5B34F591EF9BBCA0059667F /* Build configuration list for PBXProject "TenorGIf" */;
@@ -188,6 +242,7 @@
 			projectRoot = "";
 			targets = (
 				D5B34F5D1EF9BBCA0059667F /* TenorGif */,
+				D5F091CB1F033C9F00233F74 /* TenorGifTests */,
 			);
 		};
 /* End PBXProject section */
@@ -200,6 +255,13 @@
 				D5B34F6C1EF9BBCA0059667F /* LaunchScreen.storyboard in Resources */,
 				D5B34F691EF9BBCA0059667F /* Assets.xcassets in Resources */,
 				D5B34F671EF9BBCA0059667F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5F091CA1F033C9F00233F74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +289,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D5F091C81F033C9F00233F74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5F091CF1F033C9F00233F74 /* TenorGifTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5F091D21F033C9F00233F74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5B34F5D1EF9BBCA0059667F /* TenorGif */;
+			targetProxy = D5F091D11F033C9F00233F74 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D5B34F651EF9BBCA0059667F /* Main.storyboard */ = {
@@ -390,6 +468,36 @@
 			};
 			name = Release;
 		};
+		D5F091D31F033C9F00233F74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = UVHFXZWG47;
+				INFOPLIST_FILE = TenorGifTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.synthus.TenorGifTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TenorGif.app/TenorGif";
+			};
+			name = Debug;
+		};
+		D5F091D41F033C9F00233F74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = UVHFXZWG47;
+				INFOPLIST_FILE = TenorGifTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.synthus.TenorGifTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TenorGif.app/TenorGif";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -410,6 +518,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D5F091D51F033CA000233F74 /* Build configuration list for PBXNativeTarget "TenorGifTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5F091D31F033C9F00233F74 /* Debug */,
+				D5F091D41F033C9F00233F74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
